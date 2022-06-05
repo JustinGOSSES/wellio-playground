@@ -48,19 +48,22 @@ function loadWellio(){
     return new Promise((resolve, reject)=>{
             /** The line below works if you've installed wellio in the folder by running `npm install wellio`, which creates a folder called 
              * node_modules and populates it with wellio and wellio's dependencies */
-            resolve(require(['node_modules/wellio/dist/index.js'],function(wellio_obj){wellio = wellio_obj}));
+            // resolve(require(['node_modules/wellio/dist/index.js'],function(wellio_obj){wellio = wellio_obj}));
             /**
              * The line below won't work on chrome and some other browsers as the file is brought in as meme type text and not javascript!
              */
             //resolve(require(['https://raw.githubusercontent.com/JustinGOSSES/wellio.js/master/dist/index.js'],function(wellio_obj){wellio = wellio_obj})); 
             /**
-             * The line below, however, will work as the CDN's server supplies the file as javascript. If you use this method, you don't have to create 
-             * node_modules, but you do end up using the newest version of wellio, whatever it is, by default every time.
+             * The line below, however, will work as the CDN's server supplies the file as javascript.
              */
-            // resolve(require(['https://cdn.jsdelivr.net/npm/wellio'],function(wellio_obj){wellio = wellio_obj})); 
+            resolve(require(['https://cdn.jsdelivr.net/npm/wellio'],function(wellio_obj){wellio = wellio_obj})); 
         }).catch(error =>{
             reject(error);
         }); 
+}
+
+function checkWellio(){
+  console.log("wellio help message =",wellio.help)
 }
   
 /**
@@ -68,14 +71,16 @@ function loadWellio(){
 wellio module, the order of execution is important and timeouts are used to ensure that the functions are executed in the right order.
 * This is kinda a hack, but it means you don't have to use webpack, browserify, or any other build tool that might be one more thing to learn.
 **/
-loadWellio()
-.then(
-  (message) => {
-    setTimeout(() => readInLASFromASSETS("a00-01-01-073-05W5-0.LAS"), 200)
-    }
- )
- .then(
-  (message) => {
-      setTimeout(() => convertToWellioLAS(), 300)
-  }
-)
+window.onload = function() {
+  loadWellio()
+    .then(
+      (message) => {
+        setTimeout(() => readInLASFromASSETS("a00-01-01-073-05W5-0.LAS"), 200)
+        }
+    )
+    .then(
+      (message) => {
+          setTimeout(() => convertToWellioLAS(), 300)
+      }
+    )
+};

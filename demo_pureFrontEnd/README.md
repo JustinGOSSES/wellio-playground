@@ -21,20 +21,13 @@ This is an example that uses timeouts as a somewhat hacky way to ensure each ste
 
 This type of problem may not come up at all if you're calling functions after button pushes, but if all the logic runs on page load, it has confused people in the past.
 
-### How To
+## How To
 
-## Prerequisites
-- NPM
-  - Recommend using [NVM](https://github.com/nvm-sh/nvm) to install npm if you don't have it already, so it is easy to have different versions of node on your machine and switch back and forth.
-
-
-## Instruction Steps to Replicate/Explain demo_noBrowserifyWithTimeOutCrutch demo
-- In a terminal, from the top directory, run `npm install wellio`. 
-  - This puts a folder called 'node_modules' in the top directly and within it creates a folders for wellio and the various node modules that wellio uses.
+### Instruction Steps to Replicate/Explain demo_noBrowserifyWithTimeOutCrutch demo
 - Create an `index.html` file at the same level by running `touch index.html`
-- Create a `js` directory, by running mkdir `js`
+- Create a `js` directory, by running `mkdir js`
 - Move inside the `js` folder by running `cd js`, then make a loadOneLas.js JavaScript file inside by running `touch loadOneLas.js`.
-- The rest of the instructions describe the content in these files in broad strokes. You can look into them for particulars.
+#### The rest of the instructions describe the content in these files in broad strokes. You can look into the files for particulars.
 - The index.html file loads several JavaScript files.
   - Require.js from 'https://requirejs.org/docs/release/2.3.5/minified/require.js' is used to load the wellio module. It is called from inside the loadOneLas.js.
   - Ajax from `https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js` is used to load the file into browser memory. Wellio.js also have some functionality for this, but it has functionality that needs to work both on server side node.js and front-end only. As a result there's been some situations where it hasn't worked well. Ajax is very robust and easy to understand, so it is used in this demo instead of the built-in wellio functionality.

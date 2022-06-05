@@ -9,4 +9,9 @@ The top-level directories in this repository with `demo_` suffixes in their name
 
 ### Demo Pages
 - https://justingosses.github.io/wellio-playground/demo_original
+  - The original temp demo used in an issue discussion
 - https://justingosses.github.io/wellio-playground/demo_noBrowserifyWithTimeOutCrutch/
+  - Uses node modules installed in local environment vis npm (Node Package Manager) but doesn't use any build tooling otherwise.
+- https://justingosses.github.io/wellio-playground/demo_pureFrontEnd
+  - Doesn't require use of any build tooling, npm, etc. Everything is 100% front-end vanilla JavaScript.
+  
