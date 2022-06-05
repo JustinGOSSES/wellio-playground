@@ -6,3 +6,7 @@ This is mostly a repo for note keeping and a place to move quickly without worry
 ## Demos
 
 The top-level directories in this repository with `demo_` suffixes in their names are independent demo folders. Each holds a `index.html` file that builds a different demo.
+
+### Demo Pages
+- https://justingosses.github.io/wellio-playground/demo_original
+- https://justingosses.github.io/wellio-playground/demo_noBrowserifyWithTimeOutCrutch/
