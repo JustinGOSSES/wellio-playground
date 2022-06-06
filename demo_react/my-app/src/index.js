@@ -3,10 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import GetWell from './getWell.js'
+
+
+
+class TodoApp extends React.Component {
+  constructor(props) {
+    // super(props);
+    // this.state = { value: 'Hello, **world**!' };
+    console.log("getWell", GetWell())
+    this.setState({ value: GetWell()});
+  }
+
+  // handleChange() {
+  //     this.setState({ value: getWell()});
+  // }
+
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>s
+  <React.StrictMode>
     <App />
   </React.StrictMode>
 );
