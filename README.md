@@ -1,3 +1,6 @@
+Bugs that were originally being explored here are gone, so archiving this repo
+
+---------------
 # wellio-playground
 Place to test alternative code and demonstrate bugs outside the main wellio.js repo.
 
